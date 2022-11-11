@@ -5,9 +5,15 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Text('Hello'),
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('My First Application'),
+        ),
+        body: Text('This is my Defult text!'),
+      ),
     );
   }
 }
