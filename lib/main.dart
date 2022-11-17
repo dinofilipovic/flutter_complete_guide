@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text('The question!'),
+            Text(questions.elementAt(0)),
             ElevatedButton(onPressed: answerQuestion, child: Text('Answer 1!')),
             ElevatedButton(
                 onPressed: () => print('Anoynmous function for Answer 2!!'),
