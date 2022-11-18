@@ -5,8 +5,9 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var questionIndex = 0;
   void answerQuestion() {
-    print('Answer Chosen!');
+    questionIndex += 1;
   }
 
   @override
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions.elementAt(0)),
+            Text(questions[questionIndex]),
             ElevatedButton(onPressed: answerQuestion, child: Text('Answer 1!')),
             ElevatedButton(
                 onPressed: () => print('Anoynmous function for Answer 2!!'),
