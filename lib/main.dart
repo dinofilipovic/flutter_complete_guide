@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
         ),
         body: Column(
           children: <Widget>[
-            Text(questions[_questionIndex]),
+            Question(questions[_questionIndex]),
             ElevatedButton(
                 onPressed: _answerQuestion, child: const Text('Answer 1!')),
             ElevatedButton(
