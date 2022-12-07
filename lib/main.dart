@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,21 +39,14 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(
           title: const Text('My First Application'),
         ),
-        body: Column(
-          children: <Widget>[
-            Question(questions[_questionIndex]),
-            ElevatedButton(
-                onPressed: _answerQuestion, child: const Text('Answer 1!')),
-            ElevatedButton(
-                onPressed: () => print('Anoynmous function for Answer 2!!'),
-                child: const Text('Answer 2')),
-            ElevatedButton(
-                onPressed: () {
-                  print('Hello from curly braces anonymous function!');
-                },
-                child: const Text('Answer 3')),
-          ],
-        ),
+        body: Column(children: [
+          Question(
+            questions[_questionIndex],
+          ),
+          Answer(),
+          Answer(),
+          Answer(),
+        ]),
       ),
     );
   }
