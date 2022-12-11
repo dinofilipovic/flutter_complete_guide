@@ -10,7 +10,16 @@ void main() {
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
-//Had to change it so I can set up conditionals in the code because const
+  @override
+  State<StatefulWidget> createState() {
+    return _MyAppState();
+    //throw UnimplementedError();
+  }
+}
+
+// Private state class which operates
+class _MyAppState extends State<MyApp> {
+  //Had to change it so I can set up conditionals in the code because const
 //is being used and it can be set up during compile phase
   final questions = const [
     {
@@ -26,20 +35,11 @@ class MyApp extends StatefulWidget {
       'answers': ['Max', 'Max', 'Max', 'Max']
     },
   ];
-
-  @override
-  State<StatefulWidget> createState() {
-    return _MyAppState();
-    //throw UnimplementedError();
-  }
-}
-
-// Private state class which operates
-class _MyAppState extends State<MyApp> {
   // private property of the class set up initialy by the application
   var _questionIndex = 0;
   // _MyAppState Method which operates question index in the application
   void _answerQuestion() {
+    if (_questionIndex < questions.length) {}
     setState(() {
       _questionIndex += 1;
     });
