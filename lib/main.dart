@@ -24,21 +24,40 @@ class _MyAppState extends State<MyApp> {
   final _questions = const [
     {
       'questionText': 'What\'s your favorite color?',
-      'answers': ['Black', 'Red', 'Green', 'White']
+      'answers': [
+        {'text': 'Black', 'score': 10},
+        {'text': 'Red', 'score': 5},
+        {'text': 'Green', 'score': 3},
+        {'text': 'White', 'score': 1},
+      ]
     },
     {
       'questionText': 'What\'s your favorite animal?',
-      'answers': ['Rabbit', 'Snake', 'Elephant', 'Lion']
+      'answers': [
+        {'text': 'Rabbit', 'score': 10},
+        {'text': 'Snake', 'score': 5},
+        {'text': 'Elephant', 'score': 3},
+        {'text': 'Lion', 'score': 1},
+      ]
     },
     {
       'questionText': 'Who\'s your favorite instructor?',
-      'answers': ['Max', 'Max', 'Max', 'Max']
+      'answers': [
+        {'text': 'Dino', 'score': 10},
+        {'text': 'Peter', 'score': 5},
+        {'text': 'Dinko', 'score': 4},
+        {'text': 'Pinko', 'score': 2},
+      ]
     },
   ];
   // private property of the class set up initialy by the application
   var _questionIndex = 0;
+  var _totalScore = 0;
   // _MyAppState Method which operates question index in the application
-  void _answerQuestion() {
+  void _answerQuestion(int score) {
+    // Added after modification of the questions, answers structure, added map into answer
+    _totalScore += score;
+
     if (_questionIndex < _questions.length) {}
     setState(() {
       _questionIndex += 1;
@@ -58,7 +77,7 @@ class _MyAppState extends State<MyApp> {
                 questions: _questions,
                 questionIndex: _questionIndex,
               )
-            : Result(),
+            : Result(_totalScore),
       ),
     );
   }
