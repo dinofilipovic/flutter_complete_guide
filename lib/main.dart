@@ -84,6 +84,7 @@ class _MyAppState extends State<MyApp> {
                 questions: _questions,
                 questionIndex: _questionIndex,
               )
+            //added parameter _resetQuiz for reset quiz functionality
             : Result(_totalScore, _resetQuiz),
       ),
     );

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class Result extends StatelessWidget {
   //const Result({super.key});
   final int resultScore;
+  //Added for reset quiz functionality
   final VoidCallback resetHandler;
 
   Result(this.resultScore, this.resetHandler);
@@ -34,6 +35,7 @@ class Result extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
+          // Added as reset quiz functionality
           ElevatedButton(
             child: Text('Restart quiz'),
             onPressed: resetHandler,
